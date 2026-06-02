@@ -1,0 +1,147 @@
+-- Процедуры вывода (форматирование)
+PROC print.int (VAL INT n, VAL INT width, CHAN BYTE stdout)
+  INT temp, count, spaces:
+  [12]BYTE buf:
+  SEQ
+    IF
+      n = 0
+        SEQ
+          buf[0] := '0'
+          count := 1
+      TRUE
+        SEQ
+          temp := n
+          count := 0
+          WHILE temp > 0
+            SEQ
+              buf[count] := BYTE ((temp REM 10) PLUS 48)
+              temp := temp / 10
+              count := count PLUS 1
+    spaces := width - count
+    WHILE spaces > 0
+      SEQ
+        stdout ! ' '
+        spaces := spaces - 1
+    WHILE count > 0
+      SEQ
+        count := count - 1
+        stdout ! buf[count]
+:
+
+PROC print.str (VAL []BYTE s, CHAN BYTE stdout)
+  SEQ i = 0 FOR SIZE s
+    stdout ! s[i]
+:
+
+-- все циклы БЕСКОНЕЧНЫЕ
+PROC clock (CHAN INT out)
+  INT n:
+  SEQ
+    n := 0
+    WHILE TRUE
+      SEQ
+        out ! n
+        n := n PLUS 1
+:
+
+PROC delta.gen (VAL INT delta, CHAN INT out)
+  WHILE TRUE
+    out ! delta
+:
+
+PROC adder (VAL INT init, CHAN INT in, out)
+  INT current, delta:
+  SEQ
+    current := init
+    WHILE TRUE
+      SEQ
+        out ! current
+        in ? delta
+        current := current PLUS delta
+:
+
+PROC end.adder (VAL INT init, CHAN INT in, out)
+  INT current, delta:
+  SEQ
+    current := init
+    WHILE TRUE
+      SEQ
+        out ! current
+        in ? delta
+        current := current PLUS delta
+:
+
+PROC printer (CHAN INT in.n, in.sq, in.cb, in.quad, CHAN BYTE stdout)
+  INT n, sq, cb, quad:
+  TIMER time:               -- Объявляем системный таймер
+  INT current.time:         -- Переменная для хранения текущего тика
+  VAL INT delay IS 300000:  -- Величина задержки в тиках (примерно 300 мс в KRoC)
+  
+  WHILE TRUE
+    SEQ
+      in.n ? n
+      in.sq ? sq
+      in.cb ? cb
+      in.quad ? quad
+      
+      print.int (n, 12, stdout)
+      print.int (sq, 13, stdout)
+      print.int (cb, 13, stdout)
+      print.int (quad, 14, stdout)
+      print.str ("*n", stdout)
+      
+      -- Логика задержки:
+      time ? current.time                  -- Считываем текущее время процессора
+      time ? AFTER (current.time PLUS delay) -- Ждем, пока время не станет больше (current PLUS delay)
+:
+
+-- Главный процесс программы
+PROC main (CHAN BYTE stdin, stdout, stderr)
+  CHAN INT c.sq.d1, c.sq.d2:
+  CHAN INT c.cb.d1, c.cb.d2, c.cb.d3:
+  CHAN INT c.qd.d1, c.qd.d2, c.qd.d3, c.qd.d4:
+  CHAN INT p.n, p.sq, p.cb, p.quad:
+
+  BYTE dummy:
+  SEQ
+    dummy := 0
+    IF
+      FALSE
+        stdin ? dummy
+      TRUE
+        SKIP
+    IF
+      FALSE
+        stderr ! dummy
+      TRUE
+        SKIP
+
+    print.str ("           N          N^2          N^3          N^4*n", stdout)
+    print.str ("------------------------------------------------------------*n", stdout)
+    
+    PAR
+      clock (p.n)
+
+      -- Вычисление N^2
+      PAR
+        delta.gen (2, c.sq.d1)
+        adder     (1, c.sq.d1, c.sq.d2)
+        end.adder (0, c.sq.d2, p.sq)
+
+      -- Вычисление N^3
+      PAR
+        delta.gen (6, c.cb.d3)
+        adder     (6, c.cb.d3, c.cb.d2)
+        adder     (1, c.cb.d2, c.cb.d1)
+        end.adder (0, c.cb.d1, p.cb)
+
+      -- Вычисление N^4
+      PAR
+        delta.gen (24, c.qd.d4)
+        adder     (36, c.qd.d4, c.qd.d3)
+        adder     (14, c.qd.d3, c.qd.d2)
+        adder     (1,  c.qd.d2, c.qd.d1)
+        end.adder (0,  c.qd.d1, p.quad)
+
+      printer (p.n, p.sq, p.cb, p.quad, stdout)
+:

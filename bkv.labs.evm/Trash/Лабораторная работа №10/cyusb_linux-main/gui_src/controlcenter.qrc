@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/">
+        <file>cypress_60x60.png</file>
+    </qresource>
+</RCC>
