@@ -9,354 +9,354 @@
                                       9 ; Public variables in this module
                                      10 ;--------------------------------------------------------
                                      11 	.globl _main
-                                     12 	.globl _EIPX6
-                                     13 	.globl _EIPX5
-                                     14 	.globl _EIPX4
-                                     15 	.globl _PI2C
-                                     16 	.globl _PUSB
-                                     17 	.globl _EIEX6
-                                     18 	.globl _EIEX5
-                                     19 	.globl _EIEX4
-                                     20 	.globl _EI2C
-                                     21 	.globl _EUSB
-                                     22 	.globl _SMOD1
-                                     23 	.globl _ERESI
-                                     24 	.globl _RESI
-                                     25 	.globl _INT6
-                                     26 	.globl _CY
-                                     27 	.globl _AC
-                                     28 	.globl _F0
-                                     29 	.globl _RS1
-                                     30 	.globl _RS0
-                                     31 	.globl _OV
-                                     32 	.globl _FL
-                                     33 	.globl _P
-                                     34 	.globl _TF2
-                                     35 	.globl _EXF2
-                                     36 	.globl _RCLK
-                                     37 	.globl _TCLK
-                                     38 	.globl _EXEN2
-                                     39 	.globl _TR2
-                                     40 	.globl _C_T2
-                                     41 	.globl _CP_RL2
-                                     42 	.globl _SM01
-                                     43 	.globl _SM11
-                                     44 	.globl _SM21
-                                     45 	.globl _REN1
-                                     46 	.globl _TB81
-                                     47 	.globl _RB81
-                                     48 	.globl _TI1
-                                     49 	.globl _RI1
-                                     50 	.globl _PS1
-                                     51 	.globl _PT2
-                                     52 	.globl _PS0
-                                     53 	.globl _PT1
-                                     54 	.globl _PX1
-                                     55 	.globl _PT0
-                                     56 	.globl _PX0
-                                     57 	.globl _PD7
-                                     58 	.globl _PD6
-                                     59 	.globl _PD5
-                                     60 	.globl _PD4
-                                     61 	.globl _PD3
-                                     62 	.globl _PD2
-                                     63 	.globl _PD1
-                                     64 	.globl _PD0
-                                     65 	.globl _EA
-                                     66 	.globl _ES1
-                                     67 	.globl _ET2
-                                     68 	.globl _ES0
-                                     69 	.globl _ET1
-                                     70 	.globl _EX1
-                                     71 	.globl _ET0
-                                     72 	.globl _EX0
-                                     73 	.globl _PC7
-                                     74 	.globl _PC6
-                                     75 	.globl _PC5
-                                     76 	.globl _PC4
-                                     77 	.globl _PC3
-                                     78 	.globl _PC2
-                                     79 	.globl _PC1
-                                     80 	.globl _PC0
-                                     81 	.globl _SM0
-                                     82 	.globl _SM1
-                                     83 	.globl _SM2
-                                     84 	.globl _REN
-                                     85 	.globl _TB8
-                                     86 	.globl _RB8
-                                     87 	.globl _TI
-                                     88 	.globl _RI
-                                     89 	.globl _PB7
-                                     90 	.globl _PB6
-                                     91 	.globl _PB5
-                                     92 	.globl _PB4
-                                     93 	.globl _PB3
-                                     94 	.globl _PB2
-                                     95 	.globl _PB1
-                                     96 	.globl _PB0
-                                     97 	.globl _TF1
-                                     98 	.globl _TR1
-                                     99 	.globl _TF0
-                                    100 	.globl _TR0
-                                    101 	.globl _IE1
-                                    102 	.globl _IT1
-                                    103 	.globl _IE0
-                                    104 	.globl _IT0
-                                    105 	.globl _PA7
-                                    106 	.globl _PA6
-                                    107 	.globl _PA5
-                                    108 	.globl _PA4
-                                    109 	.globl _PA3
-                                    110 	.globl _PA2
-                                    111 	.globl _PA1
-                                    112 	.globl _PA0
-                                    113 	.globl _EIP
-                                    114 	.globl _B
-                                    115 	.globl _EIE
-                                    116 	.globl _ACC
-                                    117 	.globl _EICON
-                                    118 	.globl _PSW
-                                    119 	.globl _TH2
-                                    120 	.globl _TL2
-                                    121 	.globl _RCAP2H
-                                    122 	.globl _RCAP2L
-                                    123 	.globl _T2CON
-                                    124 	.globl _SBUF1
-                                    125 	.globl _SCON1
-                                    126 	.globl _GPIFSGLDATLNOX
-                                    127 	.globl _GPIFSGLDATLX
-                                    128 	.globl _GPIFSGLDATH
-                                    129 	.globl _GPIFTRIG
-                                    130 	.globl _EP01STAT
-                                    131 	.globl _IP
-                                    132 	.globl _OEE
-                                    133 	.globl _OED
-                                    134 	.globl _OEC
-                                    135 	.globl _OEB
-                                    136 	.globl _OEA
-                                    137 	.globl _IOE
-                                    138 	.globl _IOD
-                                    139 	.globl _AUTOPTRSETUP
-                                    140 	.globl _EP68FIFOFLGS
-                                    141 	.globl _EP24FIFOFLGS
-                                    142 	.globl _EP2468STAT
-                                    143 	.globl _IE
-                                    144 	.globl _INT4CLR
-                                    145 	.globl _INT2CLR
-                                    146 	.globl _IOC
-                                    147 	.globl _AUTOPTRL2
-                                    148 	.globl _AUTOPTRH2
-                                    149 	.globl _AUTOPTRL1
-                                    150 	.globl _AUTOPTRH1
-                                    151 	.globl _SBUF0
-                                    152 	.globl _SCON0
-                                    153 	.globl __XPAGE
-                                    154 	.globl _EXIF
-                                    155 	.globl _IOB
-                                    156 	.globl _CKCON
-                                    157 	.globl _TH1
-                                    158 	.globl _TH0
-                                    159 	.globl _TL1
-                                    160 	.globl _TL0
-                                    161 	.globl _TMOD
-                                    162 	.globl _TCON
-                                    163 	.globl _PCON
-                                    164 	.globl _DPS
-                                    165 	.globl _DPH1
-                                    166 	.globl _DPL1
-                                    167 	.globl _DPH
-                                    168 	.globl _DPL
-                                    169 	.globl _SP
-                                    170 	.globl _IOA
-                                    171 	.globl _GPCR2
-                                    172 	.globl _ECC2B2
-                                    173 	.globl _ECC2B1
-                                    174 	.globl _ECC2B0
-                                    175 	.globl _ECC1B2
-                                    176 	.globl _ECC1B1
-                                    177 	.globl _ECC1B0
-                                    178 	.globl _ECCRESET
-                                    179 	.globl _ECCCFG
-                                    180 	.globl _EP8FIFOBUF
-                                    181 	.globl _EP6FIFOBUF
-                                    182 	.globl _EP4FIFOBUF
-                                    183 	.globl _EP2FIFOBUF
-                                    184 	.globl _EP1INBUF
-                                    185 	.globl _EP1OUTBUF
-                                    186 	.globl _EP0BUF
-                                    187 	.globl _UDMACRCQUAL
-                                    188 	.globl _UDMACRCL
-                                    189 	.globl _UDMACRCH
-                                    190 	.globl _GPIFHOLDAMOUNT
-                                    191 	.globl _FLOWSTBHPERIOD
-                                    192 	.globl _FLOWSTBEDGE
-                                    193 	.globl _FLOWSTB
-                                    194 	.globl _FLOWHOLDOFF
-                                    195 	.globl _FLOWEQ1CTL
-                                    196 	.globl _FLOWEQ0CTL
-                                    197 	.globl _FLOWLOGIC
-                                    198 	.globl _FLOWSTATE
-                                    199 	.globl _GPIFABORT
-                                    200 	.globl _GPIFREADYSTAT
-                                    201 	.globl _GPIFREADYCFG
-                                    202 	.globl _XGPIFSGLDATLNOX
-                                    203 	.globl _XGPIFSGLDATLX
-                                    204 	.globl _XGPIFSGLDATH
-                                    205 	.globl _EP8GPIFTRIG
-                                    206 	.globl _EP8GPIFPFSTOP
-                                    207 	.globl _EP8GPIFFLGSEL
-                                    208 	.globl _EP6GPIFTRIG
-                                    209 	.globl _EP6GPIFPFSTOP
-                                    210 	.globl _EP6GPIFFLGSEL
-                                    211 	.globl _EP4GPIFTRIG
-                                    212 	.globl _EP4GPIFPFSTOP
-                                    213 	.globl _EP4GPIFFLGSEL
-                                    214 	.globl _EP2GPIFTRIG
-                                    215 	.globl _EP2GPIFPFSTOP
-                                    216 	.globl _EP2GPIFFLGSEL
-                                    217 	.globl _GPIFTCB0
-                                    218 	.globl _GPIFTCB1
-                                    219 	.globl _GPIFTCB2
-                                    220 	.globl _GPIFTCB3
-                                    221 	.globl _GPIFADRL
-                                    222 	.globl _GPIFADRH
-                                    223 	.globl _GPIFCTLCFG
-                                    224 	.globl _GPIFIDLECTL
-                                    225 	.globl _GPIFIDLECS
-                                    226 	.globl _GPIFWFSELECT
-                                    227 	.globl _SETUPDAT
-                                    228 	.globl _SUDPTRCTL
-                                    229 	.globl _SUDPTRL
-                                    230 	.globl _SUDPTRH
-                                    231 	.globl _EP8FIFOBCL
-                                    232 	.globl _EP8FIFOBCH
-                                    233 	.globl _EP6FIFOBCL
-                                    234 	.globl _EP6FIFOBCH
-                                    235 	.globl _EP4FIFOBCL
-                                    236 	.globl _EP4FIFOBCH
-                                    237 	.globl _EP2FIFOBCL
-                                    238 	.globl _EP2FIFOBCH
-                                    239 	.globl _EP8FIFOFLGS
-                                    240 	.globl _EP6FIFOFLGS
-                                    241 	.globl _EP4FIFOFLGS
-                                    242 	.globl _EP2FIFOFLGS
-                                    243 	.globl _EP8CS
-                                    244 	.globl _EP6CS
-                                    245 	.globl _EP4CS
-                                    246 	.globl _EP2CS
-                                    247 	.globl _EP1INCS
-                                    248 	.globl _EP1OUTCS
-                                    249 	.globl _EP0CS
-                                    250 	.globl _EP8BCL
-                                    251 	.globl _EP8BCH
-                                    252 	.globl _EP6BCL
-                                    253 	.globl _EP6BCH
-                                    254 	.globl _EP4BCL
-                                    255 	.globl _EP4BCH
-                                    256 	.globl _EP2BCL
-                                    257 	.globl _EP2BCH
-                                    258 	.globl _EP1INBC
-                                    259 	.globl _EP1OUTBC
-                                    260 	.globl _EP0BCL
-                                    261 	.globl _EP0BCH
-                                    262 	.globl _FNADDR
-                                    263 	.globl _MICROFRAME
-                                    264 	.globl _USBFRAMEL
-                                    265 	.globl _USBFRAMEH
-                                    266 	.globl _TOGCTL
-                                    267 	.globl _WAKEUPCS
-                                    268 	.globl _SUSPEND
-                                    269 	.globl _USBCS
-                                    270 	.globl _XAUTODAT2
-                                    271 	.globl _XAUTODAT1
-                                    272 	.globl _I2CTL
-                                    273 	.globl _I2DAT
-                                    274 	.globl _I2CS
-                                    275 	.globl _PORTECFG
-                                    276 	.globl _PORTCCFG
-                                    277 	.globl _PORTACFG
-                                    278 	.globl _INTSETUP
-                                    279 	.globl _INT4IVEC
-                                    280 	.globl _INT2IVEC
-                                    281 	.globl _CLRERRCNT
-                                    282 	.globl _ERRCNTLIM
-                                    283 	.globl _USBERRIRQ
-                                    284 	.globl _USBERRIE
-                                    285 	.globl _GPIFIRQ
-                                    286 	.globl _GPIFIE
-                                    287 	.globl _EPIRQ
-                                    288 	.globl _EPIE
-                                    289 	.globl _USBIRQ
-                                    290 	.globl _USBIE
-                                    291 	.globl _NAKIRQ
-                                    292 	.globl _NAKIE
-                                    293 	.globl _IBNIRQ
-                                    294 	.globl _IBNIE
-                                    295 	.globl _EP8FIFOIRQ
-                                    296 	.globl _EP8FIFOIE
-                                    297 	.globl _EP6FIFOIRQ
-                                    298 	.globl _EP6FIFOIE
-                                    299 	.globl _EP4FIFOIRQ
-                                    300 	.globl _EP4FIFOIE
-                                    301 	.globl _EP2FIFOIRQ
-                                    302 	.globl _EP2FIFOIE
-                                    303 	.globl _OUTPKTEND
-                                    304 	.globl _INPKTEND
-                                    305 	.globl _EP8ISOINPKTS
-                                    306 	.globl _EP6ISOINPKTS
-                                    307 	.globl _EP4ISOINPKTS
-                                    308 	.globl _EP2ISOINPKTS
-                                    309 	.globl _EP8FIFOPFL
-                                    310 	.globl _EP8FIFOPFH
-                                    311 	.globl _EP6FIFOPFL
-                                    312 	.globl _EP6FIFOPFH
-                                    313 	.globl _EP4FIFOPFL
-                                    314 	.globl _EP4FIFOPFH
-                                    315 	.globl _EP2FIFOPFL
-                                    316 	.globl _EP2FIFOPFH
-                                    317 	.globl _EP8AUTOINLENL
-                                    318 	.globl _EP8AUTOINLENH
-                                    319 	.globl _EP6AUTOINLENL
-                                    320 	.globl _EP6AUTOINLENH
-                                    321 	.globl _EP4AUTOINLENL
-                                    322 	.globl _EP4AUTOINLENH
-                                    323 	.globl _EP2AUTOINLENL
-                                    324 	.globl _EP2AUTOINLENH
-                                    325 	.globl _EP8FIFOCFG
-                                    326 	.globl _EP6FIFOCFG
-                                    327 	.globl _EP4FIFOCFG
-                                    328 	.globl _EP2FIFOCFG
-                                    329 	.globl _EP8CFG
-                                    330 	.globl _EP6CFG
-                                    331 	.globl _EP4CFG
-                                    332 	.globl _EP2CFG
-                                    333 	.globl _EP1INCFG
-                                    334 	.globl _EP1OUTCFG
-                                    335 	.globl _REVCTL
-                                    336 	.globl _REVID
-                                    337 	.globl _FIFOPINPOLAR
-                                    338 	.globl _UART230
-                                    339 	.globl _BPADDRL
-                                    340 	.globl _BPADDRH
-                                    341 	.globl _BREAKPT
-                                    342 	.globl _FIFORESET
-                                    343 	.globl _PINFLAGSCD
-                                    344 	.globl _PINFLAGSAB
-                                    345 	.globl _IFCONFIG
-                                    346 	.globl _CPUCS
-                                    347 	.globl _UNIQID5
-                                    348 	.globl _UNIQID4
-                                    349 	.globl _UNIQID3
-                                    350 	.globl _UNIQID2
-                                    351 	.globl _UNIQID1
-                                    352 	.globl _UNIQID0
-                                    353 	.globl _RES_WAVEDATA_END
-                                    354 	.globl _GPIF_WAVE_DATA
-                                    355 	.globl _delay_us
-                                    356 	.globl _delay_ms
-                                    357 	.globl _Init_Peripherals
-                                    358 	.globl _Centronics_SendByte
-                                    359 	.globl _Update_Snake
+                                     12 	.globl _Update_Snake
+                                     13 	.globl _Centronics_SendByte
+                                     14 	.globl _Init_Peripherals
+                                     15 	.globl _delay_ms
+                                     16 	.globl _delay_us
+                                     17 	.globl _EIPX6
+                                     18 	.globl _EIPX5
+                                     19 	.globl _EIPX4
+                                     20 	.globl _PI2C
+                                     21 	.globl _PUSB
+                                     22 	.globl _EIEX6
+                                     23 	.globl _EIEX5
+                                     24 	.globl _EIEX4
+                                     25 	.globl _EI2C
+                                     26 	.globl _EUSB
+                                     27 	.globl _SMOD1
+                                     28 	.globl _ERESI
+                                     29 	.globl _RESI
+                                     30 	.globl _INT6
+                                     31 	.globl _CY
+                                     32 	.globl _AC
+                                     33 	.globl _F0
+                                     34 	.globl _RS1
+                                     35 	.globl _RS0
+                                     36 	.globl _OV
+                                     37 	.globl _FL
+                                     38 	.globl _P
+                                     39 	.globl _TF2
+                                     40 	.globl _EXF2
+                                     41 	.globl _RCLK
+                                     42 	.globl _TCLK
+                                     43 	.globl _EXEN2
+                                     44 	.globl _TR2
+                                     45 	.globl _C_T2
+                                     46 	.globl _CP_RL2
+                                     47 	.globl _SM01
+                                     48 	.globl _SM11
+                                     49 	.globl _SM21
+                                     50 	.globl _REN1
+                                     51 	.globl _TB81
+                                     52 	.globl _RB81
+                                     53 	.globl _TI1
+                                     54 	.globl _RI1
+                                     55 	.globl _PS1
+                                     56 	.globl _PT2
+                                     57 	.globl _PS0
+                                     58 	.globl _PT1
+                                     59 	.globl _PX1
+                                     60 	.globl _PT0
+                                     61 	.globl _PX0
+                                     62 	.globl _PD7
+                                     63 	.globl _PD6
+                                     64 	.globl _PD5
+                                     65 	.globl _PD4
+                                     66 	.globl _PD3
+                                     67 	.globl _PD2
+                                     68 	.globl _PD1
+                                     69 	.globl _PD0
+                                     70 	.globl _EA
+                                     71 	.globl _ES1
+                                     72 	.globl _ET2
+                                     73 	.globl _ES0
+                                     74 	.globl _ET1
+                                     75 	.globl _EX1
+                                     76 	.globl _ET0
+                                     77 	.globl _EX0
+                                     78 	.globl _PC7
+                                     79 	.globl _PC6
+                                     80 	.globl _PC5
+                                     81 	.globl _PC4
+                                     82 	.globl _PC3
+                                     83 	.globl _PC2
+                                     84 	.globl _PC1
+                                     85 	.globl _PC0
+                                     86 	.globl _SM0
+                                     87 	.globl _SM1
+                                     88 	.globl _SM2
+                                     89 	.globl _REN
+                                     90 	.globl _TB8
+                                     91 	.globl _RB8
+                                     92 	.globl _TI
+                                     93 	.globl _RI
+                                     94 	.globl _PB7
+                                     95 	.globl _PB6
+                                     96 	.globl _PB5
+                                     97 	.globl _PB4
+                                     98 	.globl _PB3
+                                     99 	.globl _PB2
+                                    100 	.globl _PB1
+                                    101 	.globl _PB0
+                                    102 	.globl _TF1
+                                    103 	.globl _TR1
+                                    104 	.globl _TF0
+                                    105 	.globl _TR0
+                                    106 	.globl _IE1
+                                    107 	.globl _IT1
+                                    108 	.globl _IE0
+                                    109 	.globl _IT0
+                                    110 	.globl _PA7
+                                    111 	.globl _PA6
+                                    112 	.globl _PA5
+                                    113 	.globl _PA4
+                                    114 	.globl _PA3
+                                    115 	.globl _PA2
+                                    116 	.globl _PA1
+                                    117 	.globl _PA0
+                                    118 	.globl _EIP
+                                    119 	.globl _B
+                                    120 	.globl _EIE
+                                    121 	.globl _ACC
+                                    122 	.globl _EICON
+                                    123 	.globl _PSW
+                                    124 	.globl _TH2
+                                    125 	.globl _TL2
+                                    126 	.globl _RCAP2H
+                                    127 	.globl _RCAP2L
+                                    128 	.globl _T2CON
+                                    129 	.globl _SBUF1
+                                    130 	.globl _SCON1
+                                    131 	.globl _GPIFSGLDATLNOX
+                                    132 	.globl _GPIFSGLDATLX
+                                    133 	.globl _GPIFSGLDATH
+                                    134 	.globl _GPIFTRIG
+                                    135 	.globl _EP01STAT
+                                    136 	.globl _IP
+                                    137 	.globl _OEE
+                                    138 	.globl _OED
+                                    139 	.globl _OEC
+                                    140 	.globl _OEB
+                                    141 	.globl _OEA
+                                    142 	.globl _IOE
+                                    143 	.globl _IOD
+                                    144 	.globl _AUTOPTRSETUP
+                                    145 	.globl _EP68FIFOFLGS
+                                    146 	.globl _EP24FIFOFLGS
+                                    147 	.globl _EP2468STAT
+                                    148 	.globl _IE
+                                    149 	.globl _INT4CLR
+                                    150 	.globl _INT2CLR
+                                    151 	.globl _IOC
+                                    152 	.globl _AUTOPTRL2
+                                    153 	.globl _AUTOPTRH2
+                                    154 	.globl _AUTOPTRL1
+                                    155 	.globl _AUTOPTRH1
+                                    156 	.globl _SBUF0
+                                    157 	.globl _SCON0
+                                    158 	.globl __XPAGE
+                                    159 	.globl _EXIF
+                                    160 	.globl _IOB
+                                    161 	.globl _CKCON
+                                    162 	.globl _TH1
+                                    163 	.globl _TH0
+                                    164 	.globl _TL1
+                                    165 	.globl _TL0
+                                    166 	.globl _TMOD
+                                    167 	.globl _TCON
+                                    168 	.globl _PCON
+                                    169 	.globl _DPS
+                                    170 	.globl _DPH1
+                                    171 	.globl _DPL1
+                                    172 	.globl _DPH
+                                    173 	.globl _DPL
+                                    174 	.globl _SP
+                                    175 	.globl _IOA
+                                    176 	.globl _GPCR2
+                                    177 	.globl _ECC2B2
+                                    178 	.globl _ECC2B1
+                                    179 	.globl _ECC2B0
+                                    180 	.globl _ECC1B2
+                                    181 	.globl _ECC1B1
+                                    182 	.globl _ECC1B0
+                                    183 	.globl _ECCRESET
+                                    184 	.globl _ECCCFG
+                                    185 	.globl _EP8FIFOBUF
+                                    186 	.globl _EP6FIFOBUF
+                                    187 	.globl _EP4FIFOBUF
+                                    188 	.globl _EP2FIFOBUF
+                                    189 	.globl _EP1INBUF
+                                    190 	.globl _EP1OUTBUF
+                                    191 	.globl _EP0BUF
+                                    192 	.globl _UDMACRCQUAL
+                                    193 	.globl _UDMACRCL
+                                    194 	.globl _UDMACRCH
+                                    195 	.globl _GPIFHOLDAMOUNT
+                                    196 	.globl _FLOWSTBHPERIOD
+                                    197 	.globl _FLOWSTBEDGE
+                                    198 	.globl _FLOWSTB
+                                    199 	.globl _FLOWHOLDOFF
+                                    200 	.globl _FLOWEQ1CTL
+                                    201 	.globl _FLOWEQ0CTL
+                                    202 	.globl _FLOWLOGIC
+                                    203 	.globl _FLOWSTATE
+                                    204 	.globl _GPIFABORT
+                                    205 	.globl _GPIFREADYSTAT
+                                    206 	.globl _GPIFREADYCFG
+                                    207 	.globl _XGPIFSGLDATLNOX
+                                    208 	.globl _XGPIFSGLDATLX
+                                    209 	.globl _XGPIFSGLDATH
+                                    210 	.globl _EP8GPIFTRIG
+                                    211 	.globl _EP8GPIFPFSTOP
+                                    212 	.globl _EP8GPIFFLGSEL
+                                    213 	.globl _EP6GPIFTRIG
+                                    214 	.globl _EP6GPIFPFSTOP
+                                    215 	.globl _EP6GPIFFLGSEL
+                                    216 	.globl _EP4GPIFTRIG
+                                    217 	.globl _EP4GPIFPFSTOP
+                                    218 	.globl _EP4GPIFFLGSEL
+                                    219 	.globl _EP2GPIFTRIG
+                                    220 	.globl _EP2GPIFPFSTOP
+                                    221 	.globl _EP2GPIFFLGSEL
+                                    222 	.globl _GPIFTCB0
+                                    223 	.globl _GPIFTCB1
+                                    224 	.globl _GPIFTCB2
+                                    225 	.globl _GPIFTCB3
+                                    226 	.globl _GPIFADRL
+                                    227 	.globl _GPIFADRH
+                                    228 	.globl _GPIFCTLCFG
+                                    229 	.globl _GPIFIDLECTL
+                                    230 	.globl _GPIFIDLECS
+                                    231 	.globl _GPIFWFSELECT
+                                    232 	.globl _SETUPDAT
+                                    233 	.globl _SUDPTRCTL
+                                    234 	.globl _SUDPTRL
+                                    235 	.globl _SUDPTRH
+                                    236 	.globl _EP8FIFOBCL
+                                    237 	.globl _EP8FIFOBCH
+                                    238 	.globl _EP6FIFOBCL
+                                    239 	.globl _EP6FIFOBCH
+                                    240 	.globl _EP4FIFOBCL
+                                    241 	.globl _EP4FIFOBCH
+                                    242 	.globl _EP2FIFOBCL
+                                    243 	.globl _EP2FIFOBCH
+                                    244 	.globl _EP8FIFOFLGS
+                                    245 	.globl _EP6FIFOFLGS
+                                    246 	.globl _EP4FIFOFLGS
+                                    247 	.globl _EP2FIFOFLGS
+                                    248 	.globl _EP8CS
+                                    249 	.globl _EP6CS
+                                    250 	.globl _EP4CS
+                                    251 	.globl _EP2CS
+                                    252 	.globl _EP1INCS
+                                    253 	.globl _EP1OUTCS
+                                    254 	.globl _EP0CS
+                                    255 	.globl _EP8BCL
+                                    256 	.globl _EP8BCH
+                                    257 	.globl _EP6BCL
+                                    258 	.globl _EP6BCH
+                                    259 	.globl _EP4BCL
+                                    260 	.globl _EP4BCH
+                                    261 	.globl _EP2BCL
+                                    262 	.globl _EP2BCH
+                                    263 	.globl _EP1INBC
+                                    264 	.globl _EP1OUTBC
+                                    265 	.globl _EP0BCL
+                                    266 	.globl _EP0BCH
+                                    267 	.globl _FNADDR
+                                    268 	.globl _MICROFRAME
+                                    269 	.globl _USBFRAMEL
+                                    270 	.globl _USBFRAMEH
+                                    271 	.globl _TOGCTL
+                                    272 	.globl _WAKEUPCS
+                                    273 	.globl _SUSPEND
+                                    274 	.globl _USBCS
+                                    275 	.globl _XAUTODAT2
+                                    276 	.globl _XAUTODAT1
+                                    277 	.globl _I2CTL
+                                    278 	.globl _I2DAT
+                                    279 	.globl _I2CS
+                                    280 	.globl _PORTECFG
+                                    281 	.globl _PORTCCFG
+                                    282 	.globl _PORTACFG
+                                    283 	.globl _INTSETUP
+                                    284 	.globl _INT4IVEC
+                                    285 	.globl _INT2IVEC
+                                    286 	.globl _CLRERRCNT
+                                    287 	.globl _ERRCNTLIM
+                                    288 	.globl _USBERRIRQ
+                                    289 	.globl _USBERRIE
+                                    290 	.globl _GPIFIRQ
+                                    291 	.globl _GPIFIE
+                                    292 	.globl _EPIRQ
+                                    293 	.globl _EPIE
+                                    294 	.globl _USBIRQ
+                                    295 	.globl _USBIE
+                                    296 	.globl _NAKIRQ
+                                    297 	.globl _NAKIE
+                                    298 	.globl _IBNIRQ
+                                    299 	.globl _IBNIE
+                                    300 	.globl _EP8FIFOIRQ
+                                    301 	.globl _EP8FIFOIE
+                                    302 	.globl _EP6FIFOIRQ
+                                    303 	.globl _EP6FIFOIE
+                                    304 	.globl _EP4FIFOIRQ
+                                    305 	.globl _EP4FIFOIE
+                                    306 	.globl _EP2FIFOIRQ
+                                    307 	.globl _EP2FIFOIE
+                                    308 	.globl _OUTPKTEND
+                                    309 	.globl _INPKTEND
+                                    310 	.globl _EP8ISOINPKTS
+                                    311 	.globl _EP6ISOINPKTS
+                                    312 	.globl _EP4ISOINPKTS
+                                    313 	.globl _EP2ISOINPKTS
+                                    314 	.globl _EP8FIFOPFL
+                                    315 	.globl _EP8FIFOPFH
+                                    316 	.globl _EP6FIFOPFL
+                                    317 	.globl _EP6FIFOPFH
+                                    318 	.globl _EP4FIFOPFL
+                                    319 	.globl _EP4FIFOPFH
+                                    320 	.globl _EP2FIFOPFL
+                                    321 	.globl _EP2FIFOPFH
+                                    322 	.globl _EP8AUTOINLENL
+                                    323 	.globl _EP8AUTOINLENH
+                                    324 	.globl _EP6AUTOINLENL
+                                    325 	.globl _EP6AUTOINLENH
+                                    326 	.globl _EP4AUTOINLENL
+                                    327 	.globl _EP4AUTOINLENH
+                                    328 	.globl _EP2AUTOINLENL
+                                    329 	.globl _EP2AUTOINLENH
+                                    330 	.globl _EP8FIFOCFG
+                                    331 	.globl _EP6FIFOCFG
+                                    332 	.globl _EP4FIFOCFG
+                                    333 	.globl _EP2FIFOCFG
+                                    334 	.globl _EP8CFG
+                                    335 	.globl _EP6CFG
+                                    336 	.globl _EP4CFG
+                                    337 	.globl _EP2CFG
+                                    338 	.globl _EP1INCFG
+                                    339 	.globl _EP1OUTCFG
+                                    340 	.globl _REVCTL
+                                    341 	.globl _REVID
+                                    342 	.globl _FIFOPINPOLAR
+                                    343 	.globl _UART230
+                                    344 	.globl _BPADDRL
+                                    345 	.globl _BPADDRH
+                                    346 	.globl _BREAKPT
+                                    347 	.globl _FIFORESET
+                                    348 	.globl _PINFLAGSCD
+                                    349 	.globl _PINFLAGSAB
+                                    350 	.globl _IFCONFIG
+                                    351 	.globl _CPUCS
+                                    352 	.globl _UNIQID5
+                                    353 	.globl _UNIQID4
+                                    354 	.globl _UNIQID3
+                                    355 	.globl _UNIQID2
+                                    356 	.globl _UNIQID1
+                                    357 	.globl _UNIQID0
+                                    358 	.globl _RES_WAVEDATA_END
+                                    359 	.globl _GPIF_WAVE_DATA
                                     360 ;--------------------------------------------------------
                                     361 ; special function registers
                                     362 ;--------------------------------------------------------
@@ -535,9 +535,9 @@
                                     535 ; internal ram data
                                     536 ;--------------------------------------------------------
                                     537 	.area DSEG    (DATA)
-      000008                        538 _Update_Snake_snake_10000_17:
+      000008                        538 _Update_Snake_snake_10000_11:
       000008                        539 	.ds 1
-      000009                        540 _Update_Snake_direction_10000_17:
+      000009                        540 _Update_Snake_direction_10000_11:
       000009                        541 	.ds 1
                                     542 ;--------------------------------------------------------
                                     543 ; overlayable items in internal ram
@@ -853,13 +853,13 @@
                                     853 ;------------------------------------------------------------
                                     854 ;Allocation info for local variables in function 'Update_Snake'
                                     855 ;------------------------------------------------------------
-                                    856 ;snake         Allocated with name '_Update_Snake_snake_10000_17'
-                                    857 ;direction     Allocated with name '_Update_Snake_direction_10000_17'
+                                    856 ;snake         Allocated with name '_Update_Snake_snake_10000_11'
+                                    857 ;direction     Allocated with name '_Update_Snake_direction_10000_11'
                                     858 ;------------------------------------------------------------
-                                    859 ;	main.c:71: static unsigned char snake = 0x07;      // Начало: 3 диода (0000_0111)
-      0000A5 75 08 07         [24]  860 	mov	_Update_Snake_snake_10000_17,#0x07
-                                    861 ;	main.c:72: static unsigned char direction = 0;     // 0 — влево, 1 — вправо
-      0000A8 75 09 00         [24]  862 	mov	_Update_Snake_direction_10000_17,#0x00
+                                    859 ;	main.c:32: static unsigned char snake = 0x07; 
+      0000A5 75 08 07         [24]  860 	mov	_Update_Snake_snake_10000_11,#0x07
+                                    861 ;	main.c:35: static unsigned char direction = 0; 
+      0000A8 75 09 00         [24]  862 	mov	_Update_Snake_direction_10000_11,#0x00
                                     863 	.area GSFINAL (CODE)
       0000AB 02 00 49         [24]  864 	ljmp	__sdcc_program_startup
                                     865 ;--------------------------------------------------------
@@ -868,7 +868,7 @@
                                     868 	.area HOME    (CODE)
                                     869 	.area HOME    (CODE)
       000049                        870 __sdcc_program_startup:
-      000049 02 01 3E         [24]  871 	ljmp	_main
+      000049 02 01 30         [24]  871 	ljmp	_main
                                     872 ;	return from main will return to caller
                                     873 ;--------------------------------------------------------
                                     874 ; code
@@ -879,7 +879,7 @@
                                     879 ;------------------------------------------------------------
                                     880 ;us            Allocated to registers 
                                     881 ;------------------------------------------------------------
-                                    882 ;	main.c:19: void delay_us(unsigned int us) {
+                                    882 ;	main.c:3: void delay_us(unsigned int us) {
                                     883 ;	-----------------------------------------
                                     884 ;	 function delay_us
                                     885 ;	-----------------------------------------
@@ -894,7 +894,7 @@
                            000000   894 	ar0 = 0x00
       0000AE AE 82            [24]  895 	mov	r6, dpl
       0000B0 AF 83            [24]  896 	mov	r7, dph
-                                    897 ;	main.c:20: while (us--) {
+                                    897 ;	main.c:4: while(us--) {
       0000B2                        898 00101$:
       0000B2 8E 04            [24]  899 	mov	ar4,r6
       0000B4 8F 05            [24]  900 	mov	ar5,r7
@@ -904,180 +904,157 @@
       0000BB                        904 00119$:
       0000BB EC               [12]  905 	mov	a,r4
       0000BC 4D               [12]  906 	orl	a,r5
-      0000BD 60 0A            [24]  907 	jz	00104$
-                                    908 ;	main.c:21: __asm NOP __endasm;
+      0000BD 60 04            [24]  907 	jz	00104$
+                                    908 ;	main.c:5: __asm NOP __endasm; // Специфичный для SDCC синтаксис ассемблера
       0000BF 00               [12]  909 	NOP	
-                                    910 ;	main.c:22: __asm NOP __endasm;
+                                    910 ;	main.c:6: __asm NOP __endasm;
       0000C0 00               [12]  911 	NOP	
-                                    912 ;	main.c:23: __asm NOP __endasm;
-      0000C1 00               [12]  913 	NOP	
-                                    914 ;	main.c:24: __asm NOP __endasm;
-      0000C2 00               [12]  915 	NOP	
-                                    916 ;	main.c:25: __asm NOP __endasm;
-      0000C3 00               [12]  917 	NOP	
-                                    918 ;	main.c:26: __asm NOP __endasm;
-      0000C4 00               [12]  919 	NOP	
-                                    920 ;	main.c:27: __asm NOP __endasm;
-      0000C5 00               [12]  921 	NOP	
-                                    922 ;	main.c:28: __asm NOP __endasm;
-      0000C6 00               [12]  923 	NOP	
-      0000C7 80 E9            [24]  924 	sjmp	00101$
-      0000C9                        925 00104$:
-                                    926 ;	main.c:32: }
-      0000C9 22               [24]  927 	ret
-                                    928 ;------------------------------------------------------------
-                                    929 ;Allocation info for local variables in function 'delay_ms'
-                                    930 ;------------------------------------------------------------
-                                    931 ;ms            Allocated to registers 
-                                    932 ;------------------------------------------------------------
-                                    933 ;	main.c:34: void delay_ms(unsigned int ms) {
-                                    934 ;	-----------------------------------------
-                                    935 ;	 function delay_ms
-                                    936 ;	-----------------------------------------
-      0000CA                        937 _delay_ms:
-      0000CA AE 82            [24]  938 	mov	r6, dpl
-      0000CC AF 83            [24]  939 	mov	r7, dph
-                                    940 ;	main.c:35: while (ms--) {
-      0000CE                        941 00101$:
-      0000CE 8E 04            [24]  942 	mov	ar4,r6
-      0000D0 8F 05            [24]  943 	mov	ar5,r7
-      0000D2 1E               [12]  944 	dec	r6
-      0000D3 BE FF 01         [24]  945 	cjne	r6,#0xff,00119$
-      0000D6 1F               [12]  946 	dec	r7
-      0000D7                        947 00119$:
-      0000D7 EC               [12]  948 	mov	a,r4
-      0000D8 4D               [12]  949 	orl	a,r5
-      0000D9 60 10            [24]  950 	jz	00104$
-                                    951 ;	main.c:36: delay_us(1000);  // 1000 × ~1 мкс = ~1 мс
-      0000DB 90 03 E8         [24]  952 	mov	dptr,#0x03e8
-      0000DE C0 07            [24]  953 	push	ar7
-      0000E0 C0 06            [24]  954 	push	ar6
-      0000E2 12 00 AE         [24]  955 	lcall	_delay_us
-      0000E5 D0 06            [24]  956 	pop	ar6
-      0000E7 D0 07            [24]  957 	pop	ar7
-      0000E9 80 E3            [24]  958 	sjmp	00101$
-      0000EB                        959 00104$:
-                                    960 ;	main.c:38: }
-      0000EB 22               [24]  961 	ret
-                                    962 ;------------------------------------------------------------
-                                    963 ;Allocation info for local variables in function 'Init_Peripherals'
-                                    964 ;------------------------------------------------------------
-                                    965 ;	main.c:43: void Init_Peripherals(void) {
-                                    966 ;	-----------------------------------------
-                                    967 ;	 function Init_Peripherals
-                                    968 ;	-----------------------------------------
-      0000EC                        969 _Init_Peripherals:
-                                    970 ;	main.c:44: OEB  = 0xFF;        // Порт B — выход (светодиоды)
-      0000EC 75 B3 FF         [24]  971 	mov	_OEB,#0xff
-                                    972 ;	main.c:45: OED  = 0xFF;        // Порт D — выход (данные Centronics)
-      0000EF 75 B5 FF         [24]  973 	mov	_OED,#0xff
-                                    974 ;	main.c:46: OEC |= 0x01;        // PC0 — выход (STROBE)
-      0000F2 43 B4 01         [24]  975 	orl	_OEC,#0x01
-                                    976 ;	main.c:47: PC0 = 1;            // Изначально строб неактивен (высокий)
-                                    977 ;	assignBit
-      0000F5 D2 A0            [12]  978 	setb	_PC0
-                                    979 ;	main.c:48: }
-      0000F7 22               [24]  980 	ret
-                                    981 ;------------------------------------------------------------
-                                    982 ;Allocation info for local variables in function 'Centronics_SendByte'
-                                    983 ;------------------------------------------------------------
-                                    984 ;byte_to_send  Allocated to registers r7 
-                                    985 ;------------------------------------------------------------
-                                    986 ;	main.c:53: void Centronics_SendByte(unsigned char byte_to_send) {
-                                    987 ;	-----------------------------------------
-                                    988 ;	 function Centronics_SendByte
-                                    989 ;	-----------------------------------------
-      0000F8                        990 _Centronics_SendByte:
-      0000F8 AF 82            [24]  991 	mov	r7, dpl
-                                    992 ;	main.c:54: IOD = byte_to_send;     // Устанавливаем данные на порт D
-      0000FA 8F B0            [24]  993 	mov	_IOD,r7
-                                    994 ;	main.c:55: delay_us(2);            // Setup time
-      0000FC 90 00 02         [24]  995 	mov	dptr,#0x0002
-      0000FF C0 07            [24]  996 	push	ar7
-      000101 12 00 AE         [24]  997 	lcall	_delay_us
-                                    998 ;	main.c:57: PC0 = 0;                // Строб: активный ноль
-                                    999 ;	assignBit
-      000104 C2 A0            [12] 1000 	clr	_PC0
-                                   1001 ;	main.c:58: delay_us(5);            // Пульс строба (больше 0.5 мкс)
-      000106 90 00 05         [24] 1002 	mov	dptr,#0x0005
-      000109 12 00 AE         [24] 1003 	lcall	_delay_us
-                                   1004 ;	main.c:60: PC0 = 1;                // Завершаем строб
-                                   1005 ;	assignBit
-      00010C D2 A0            [12] 1006 	setb	_PC0
-                                   1007 ;	main.c:61: delay_us(2);            // Hold time
-      00010E 90 00 02         [24] 1008 	mov	dptr,#0x0002
-      000111 12 00 AE         [24] 1009 	lcall	_delay_us
-      000114 D0 07            [24] 1010 	pop	ar7
-                                   1011 ;	main.c:64: IOB = byte_to_send;
-      000116 8F 90            [24] 1012 	mov	_IOB,r7
-                                   1013 ;	main.c:65: }
-      000118 22               [24] 1014 	ret
-                                   1015 ;------------------------------------------------------------
-                                   1016 ;Allocation info for local variables in function 'Update_Snake'
-                                   1017 ;------------------------------------------------------------
-                                   1018 ;snake         Allocated with name '_Update_Snake_snake_10000_17'
-                                   1019 ;direction     Allocated with name '_Update_Snake_direction_10000_17'
-                                   1020 ;------------------------------------------------------------
-                                   1021 ;	main.c:70: void Update_Snake(void) {
-                                   1022 ;	-----------------------------------------
-                                   1023 ;	 function Update_Snake
-                                   1024 ;	-----------------------------------------
-      000119                       1025 _Update_Snake:
-                                   1026 ;	main.c:74: IOB = snake;  // Выводим на светодиоды
-      000119 85 08 90         [24] 1027 	mov	_IOB,_Update_Snake_snake_10000_17
-                                   1028 ;	main.c:76: if (direction == 0) {
-      00011C E5 09            [12] 1029 	mov	a,_Update_Snake_direction_10000_17
-      00011E 70 0F            [24] 1030 	jnz	00106$
-                                   1031 ;	main.c:77: snake <<= 1;                    // Двигаем влево
-      000120 E5 08            [12] 1032 	mov	a,_Update_Snake_snake_10000_17
-      000122 25 08            [12] 1033 	add	a,_Update_Snake_snake_10000_17
-      000124 F5 08            [12] 1034 	mov	_Update_Snake_snake_10000_17,a
-                                   1035 ;	main.c:78: if (snake == 0xE0) {           // Достигли головой PB7 (1110_0000)
-      000126 74 E0            [12] 1036 	mov	a,#0xe0
-      000128 B5 08 12         [24] 1037 	cjne	a,_Update_Snake_snake_10000_17,00108$
-                                   1038 ;	main.c:79: direction = 1;
-      00012B 75 09 01         [24] 1039 	mov	_Update_Snake_direction_10000_17,#0x01
-      00012E 22               [24] 1040 	ret
-      00012F                       1041 00106$:
-                                   1042 ;	main.c:82: snake >>= 1;                    // Двигаем вправо
-      00012F E5 08            [12] 1043 	mov	a,_Update_Snake_snake_10000_17
-      000131 C3               [12] 1044 	clr	c
-      000132 13               [12] 1045 	rrc	a
-      000133 F5 08            [12] 1046 	mov	_Update_Snake_snake_10000_17,a
-                                   1047 ;	main.c:83: if (snake == 0x07) {           // Вернулись к началу
-      000135 74 07            [12] 1048 	mov	a,#0x07
-      000137 B5 08 03         [24] 1049 	cjne	a,_Update_Snake_snake_10000_17,00108$
-                                   1050 ;	main.c:84: direction = 0;
-      00013A 75 09 00         [24] 1051 	mov	_Update_Snake_direction_10000_17,#0x00
-      00013D                       1052 00108$:
-                                   1053 ;	main.c:87: }
-      00013D 22               [24] 1054 	ret
-                                   1055 ;------------------------------------------------------------
-                                   1056 ;Allocation info for local variables in function 'main'
-                                   1057 ;------------------------------------------------------------
-                                   1058 ;	main.c:92: void main(void) {
-                                   1059 ;	-----------------------------------------
-                                   1060 ;	 function main
-                                   1061 ;	-----------------------------------------
-      00013E                       1062 _main:
-                                   1063 ;	main.c:93: Init_Peripherals();
-      00013E 12 00 EC         [24] 1064 	lcall	_Init_Peripherals
-                                   1065 ;	main.c:95: while (1) {
-      000141                       1066 00102$:
-                                   1067 ;	main.c:96: Centronics_SendByte(0xAA);    // Отправляем байт
-      000141 75 82 AA         [24] 1068 	mov	dpl, #0xaa
-      000144 12 00 F8         [24] 1069 	lcall	_Centronics_SendByte
-                                   1070 ;	main.c:97: delay_ms(150);                // Пауза
-      000147 90 00 96         [24] 1071 	mov	dptr,#0x0096
-      00014A 12 00 CA         [24] 1072 	lcall	_delay_ms
-                                   1073 ;	main.c:99: Update_Snake();               // Анимируем змейку
-      00014D 12 01 19         [24] 1074 	lcall	_Update_Snake
-                                   1075 ;	main.c:100: delay_ms(150);                // Пауза
-      000150 90 00 96         [24] 1076 	mov	dptr,#0x0096
-      000153 12 00 CA         [24] 1077 	lcall	_delay_ms
-                                   1078 ;	main.c:102: }
-      000156 80 E9            [24] 1079 	sjmp	00102$
-                                   1080 	.area CSEG    (CODE)
-                                   1081 	.area CONST   (CODE)
-                                   1082 	.area XINIT   (CODE)
-                                   1083 	.area CABS    (ABS,CODE)
+      0000C1 80 EF            [24]  912 	sjmp	00101$
+      0000C3                        913 00104$:
+                                    914 ;	main.c:8: }
+      0000C3 22               [24]  915 	ret
+                                    916 ;------------------------------------------------------------
+                                    917 ;Allocation info for local variables in function 'delay_ms'
+                                    918 ;------------------------------------------------------------
+                                    919 ;ms            Allocated to registers 
+                                    920 ;------------------------------------------------------------
+                                    921 ;	main.c:10: void delay_ms(unsigned int ms) {
+                                    922 ;	-----------------------------------------
+                                    923 ;	 function delay_ms
+                                    924 ;	-----------------------------------------
+      0000C4                        925 _delay_ms:
+      0000C4 AE 82            [24]  926 	mov	r6, dpl
+      0000C6 AF 83            [24]  927 	mov	r7, dph
+                                    928 ;	main.c:11: while(ms--) delay_us(1000);
+      0000C8                        929 00101$:
+      0000C8 8E 04            [24]  930 	mov	ar4,r6
+      0000CA 8F 05            [24]  931 	mov	ar5,r7
+      0000CC 1E               [12]  932 	dec	r6
+      0000CD BE FF 01         [24]  933 	cjne	r6,#0xff,00119$
+      0000D0 1F               [12]  934 	dec	r7
+      0000D1                        935 00119$:
+      0000D1 EC               [12]  936 	mov	a,r4
+      0000D2 4D               [12]  937 	orl	a,r5
+      0000D3 60 10            [24]  938 	jz	00104$
+      0000D5 90 03 E8         [24]  939 	mov	dptr,#0x03e8
+      0000D8 C0 07            [24]  940 	push	ar7
+      0000DA C0 06            [24]  941 	push	ar6
+      0000DC 12 00 AE         [24]  942 	lcall	_delay_us
+      0000DF D0 06            [24]  943 	pop	ar6
+      0000E1 D0 07            [24]  944 	pop	ar7
+      0000E3 80 E3            [24]  945 	sjmp	00101$
+      0000E5                        946 00104$:
+                                    947 ;	main.c:12: }
+      0000E5 22               [24]  948 	ret
+                                    949 ;------------------------------------------------------------
+                                    950 ;Allocation info for local variables in function 'Init_Peripherals'
+                                    951 ;------------------------------------------------------------
+                                    952 ;	main.c:14: void Init_Peripherals(void) {
+                                    953 ;	-----------------------------------------
+                                    954 ;	 function Init_Peripherals
+                                    955 ;	-----------------------------------------
+      0000E6                        956 _Init_Peripherals:
+                                    957 ;	main.c:15: OEB = 0xFF; // Порт B на вывод (LED)
+      0000E6 75 B3 FF         [24]  958 	mov	_OEB,#0xff
+                                    959 ;	main.c:16: OED = 0xFF; // Порт D на вывод (Centronics Data)
+      0000E9 75 B5 FF         [24]  960 	mov	_OED,#0xff
+                                    961 ;	main.c:17: OEC |= 0x01; // PC0 на вывод (STROBE)
+      0000EC 43 B4 01         [24]  962 	orl	_OEC,#0x01
+                                    963 ;	main.c:18: PC0 = 1;    // Изначально STROBE в пассивном высоком состоянии
+                                    964 ;	assignBit
+      0000EF D2 A0            [12]  965 	setb	_PC0
+                                    966 ;	main.c:19: }
+      0000F1 22               [24]  967 	ret
+                                    968 ;------------------------------------------------------------
+                                    969 ;Allocation info for local variables in function 'Centronics_SendByte'
+                                    970 ;------------------------------------------------------------
+                                    971 ;byte_to_send  Allocated to registers 
+                                    972 ;------------------------------------------------------------
+                                    973 ;	main.c:21: void Centronics_SendByte(unsigned char byte_to_send) {
+                                    974 ;	-----------------------------------------
+                                    975 ;	 function Centronics_SendByte
+                                    976 ;	-----------------------------------------
+      0000F2                        977 _Centronics_SendByte:
+      0000F2 85 82 B0         [24]  978 	mov	_IOD,dpl
+                                    979 ;	main.c:23: delay_us(2); 
+      0000F5 90 00 02         [24]  980 	mov	dptr,#0x0002
+      0000F8 12 00 AE         [24]  981 	lcall	_delay_us
+                                    982 ;	main.c:24: PC0 = 0; // Строб вниз
+                                    983 ;	assignBit
+      0000FB C2 A0            [12]  984 	clr	_PC0
+                                    985 ;	main.c:25: delay_us(5); 
+      0000FD 90 00 05         [24]  986 	mov	dptr,#0x0005
+      000100 12 00 AE         [24]  987 	lcall	_delay_us
+                                    988 ;	main.c:26: PC0 = 1; // Строб вверх
+                                    989 ;	assignBit
+      000103 D2 A0            [12]  990 	setb	_PC0
+                                    991 ;	main.c:27: delay_us(2); 
+      000105 90 00 02         [24]  992 	mov	dptr,#0x0002
+                                    993 ;	main.c:28: }
+      000108 02 00 AE         [24]  994 	ljmp	_delay_us
+                                    995 ;------------------------------------------------------------
+                                    996 ;Allocation info for local variables in function 'Update_Snake'
+                                    997 ;------------------------------------------------------------
+                                    998 ;snake         Allocated with name '_Update_Snake_snake_10000_11'
+                                    999 ;direction     Allocated with name '_Update_Snake_direction_10000_11'
+                                   1000 ;------------------------------------------------------------
+                                   1001 ;	main.c:30: void Update_Snake(void) {
+                                   1002 ;	-----------------------------------------
+                                   1003 ;	 function Update_Snake
+                                   1004 ;	-----------------------------------------
+      00010B                       1005 _Update_Snake:
+                                   1006 ;	main.c:38: IOB = snake;
+      00010B 85 08 90         [24] 1007 	mov	_IOB,_Update_Snake_snake_10000_11
+                                   1008 ;	main.c:40: if (direction == 0) {
+      00010E E5 09            [12] 1009 	mov	a,_Update_Snake_direction_10000_11
+      000110 70 0F            [24] 1010 	jnz	00106$
+                                   1011 ;	main.c:42: snake <<= 1;
+      000112 E5 08            [12] 1012 	mov	a,_Update_Snake_snake_10000_11
+      000114 25 08            [12] 1013 	add	a,_Update_Snake_snake_10000_11
+      000116 F5 08            [12] 1014 	mov	_Update_Snake_snake_10000_11,a
+                                   1015 ;	main.c:46: if (snake == 0xE0) { 
+      000118 74 E0            [12] 1016 	mov	a,#0xe0
+      00011A B5 08 12         [24] 1017 	cjne	a,_Update_Snake_snake_10000_11,00108$
+                                   1018 ;	main.c:47: direction = 1; // Меняем направление на обратное
+      00011D 75 09 01         [24] 1019 	mov	_Update_Snake_direction_10000_11,#0x01
+      000120 22               [24] 1020 	ret
+      000121                       1021 00106$:
+                                   1022 ;	main.c:51: snake >>= 1;
+      000121 E5 08            [12] 1023 	mov	a,_Update_Snake_snake_10000_11
+      000123 C3               [12] 1024 	clr	c
+      000124 13               [12] 1025 	rrc	a
+      000125 F5 08            [12] 1026 	mov	_Update_Snake_snake_10000_11,a
+                                   1027 ;	main.c:55: if (snake == 0x07) { 
+      000127 74 07            [12] 1028 	mov	a,#0x07
+      000129 B5 08 03         [24] 1029 	cjne	a,_Update_Snake_snake_10000_11,00108$
+                                   1030 ;	main.c:56: direction = 0; // Меняем направление на движение влево
+      00012C 75 09 00         [24] 1031 	mov	_Update_Snake_direction_10000_11,#0x00
+      00012F                       1032 00108$:
+                                   1033 ;	main.c:59: }
+      00012F 22               [24] 1034 	ret
+                                   1035 ;------------------------------------------------------------
+                                   1036 ;Allocation info for local variables in function 'main'
+                                   1037 ;------------------------------------------------------------
+                                   1038 ;	main.c:61: void main(void) {
+                                   1039 ;	-----------------------------------------
+                                   1040 ;	 function main
+                                   1041 ;	-----------------------------------------
+      000130                       1042 _main:
+                                   1043 ;	main.c:62: Init_Peripherals();
+      000130 12 00 E6         [24] 1044 	lcall	_Init_Peripherals
+                                   1045 ;	main.c:63: while(1) {
+      000133                       1046 00102$:
+                                   1047 ;	main.c:64: Centronics_SendByte(0xAA);
+      000133 75 82 AA         [24] 1048 	mov	dpl, #0xaa
+      000136 12 00 F2         [24] 1049 	lcall	_Centronics_SendByte
+                                   1050 ;	main.c:65: Update_Snake();
+      000139 12 01 0B         [24] 1051 	lcall	_Update_Snake
+                                   1052 ;	main.c:66: delay_ms(150); 
+      00013C 90 00 96         [24] 1053 	mov	dptr,#0x0096
+      00013F 12 00 C4         [24] 1054 	lcall	_delay_ms
+                                   1055 ;	main.c:68: }
+      000142 80 EF            [24] 1056 	sjmp	00102$
+                                   1057 	.area CSEG    (CODE)
+                                   1058 	.area CONST   (CODE)
+                                   1059 	.area XINIT   (CODE)
+                                   1060 	.area CABS    (ABS,CODE)

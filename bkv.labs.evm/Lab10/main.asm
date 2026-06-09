@@ -9,6 +9,11 @@
 ; Public variables in this module
 ;--------------------------------------------------------
 	.globl _main
+	.globl _Update_Snake
+	.globl _Centronics_SendByte
+	.globl _Init_Peripherals
+	.globl _delay_ms
+	.globl _delay_us
 	.globl _EIPX6
 	.globl _EIPX5
 	.globl _EIPX4
@@ -352,11 +357,6 @@
 	.globl _UNIQID0
 	.globl _RES_WAVEDATA_END
 	.globl _GPIF_WAVE_DATA
-	.globl _delay_us
-	.globl _delay_ms
-	.globl _Init_Peripherals
-	.globl _Centronics_SendByte
-	.globl _Update_Snake
 ;--------------------------------------------------------
 ; special function registers
 ;--------------------------------------------------------
@@ -535,9 +535,9 @@ _EIPX6	=	0x00fc
 ; internal ram data
 ;--------------------------------------------------------
 	.area DSEG    (DATA)
-_Update_Snake_snake_10000_17:
+_Update_Snake_snake_10000_11:
 	.ds 1
-_Update_Snake_direction_10000_17:
+_Update_Snake_direction_10000_11:
 	.ds 1
 ;--------------------------------------------------------
 ; overlayable items in internal ram
@@ -853,13 +853,13 @@ sdcc_atomic_compare_exchange_gptr_impl::
 ;------------------------------------------------------------
 ;Allocation info for local variables in function 'Update_Snake'
 ;------------------------------------------------------------
-;snake         Allocated with name '_Update_Snake_snake_10000_17'
-;direction     Allocated with name '_Update_Snake_direction_10000_17'
+;snake         Allocated with name '_Update_Snake_snake_10000_11'
+;direction     Allocated with name '_Update_Snake_direction_10000_11'
 ;------------------------------------------------------------
-;	main.c:71: static unsigned char snake = 0x07;      // Начало: 3 диода (0000_0111)
-	mov	_Update_Snake_snake_10000_17,#0x07
-;	main.c:72: static unsigned char direction = 0;     // 0 — влево, 1 — вправо
-	mov	_Update_Snake_direction_10000_17,#0x00
+;	main.c:32: static unsigned char snake = 0x07; 
+	mov	_Update_Snake_snake_10000_11,#0x07
+;	main.c:35: static unsigned char direction = 0; 
+	mov	_Update_Snake_direction_10000_11,#0x00
 	.area GSFINAL (CODE)
 	ljmp	__sdcc_program_startup
 ;--------------------------------------------------------
@@ -879,7 +879,7 @@ __sdcc_program_startup:
 ;------------------------------------------------------------
 ;us            Allocated to registers 
 ;------------------------------------------------------------
-;	main.c:19: void delay_us(unsigned int us) {
+;	main.c:3: void delay_us(unsigned int us) {
 ;	-----------------------------------------
 ;	 function delay_us
 ;	-----------------------------------------
@@ -894,7 +894,7 @@ _delay_us:
 	ar0 = 0x00
 	mov	r6, dpl
 	mov	r7, dph
-;	main.c:20: while (us--) {
+;	main.c:4: while(us--) {
 00101$:
 	mov	ar4,r6
 	mov	ar5,r7
@@ -905,39 +905,27 @@ _delay_us:
 	mov	a,r4
 	orl	a,r5
 	jz	00104$
-;	main.c:21: __asm NOP __endasm;
+;	main.c:5: __asm NOP __endasm; // Специфичный для SDCC синтаксис ассемблера
 	NOP	
-;	main.c:22: __asm NOP __endasm;
-	NOP	
-;	main.c:23: __asm NOP __endasm;
-	NOP	
-;	main.c:24: __asm NOP __endasm;
-	NOP	
-;	main.c:25: __asm NOP __endasm;
-	NOP	
-;	main.c:26: __asm NOP __endasm;
-	NOP	
-;	main.c:27: __asm NOP __endasm;
-	NOP	
-;	main.c:28: __asm NOP __endasm;
+;	main.c:6: __asm NOP __endasm;
 	NOP	
 	sjmp	00101$
 00104$:
-;	main.c:32: }
+;	main.c:8: }
 	ret
 ;------------------------------------------------------------
 ;Allocation info for local variables in function 'delay_ms'
 ;------------------------------------------------------------
 ;ms            Allocated to registers 
 ;------------------------------------------------------------
-;	main.c:34: void delay_ms(unsigned int ms) {
+;	main.c:10: void delay_ms(unsigned int ms) {
 ;	-----------------------------------------
 ;	 function delay_ms
 ;	-----------------------------------------
 _delay_ms:
 	mov	r6, dpl
 	mov	r7, dph
-;	main.c:35: while (ms--) {
+;	main.c:11: while(ms--) delay_us(1000);
 00101$:
 	mov	ar4,r6
 	mov	ar5,r7
@@ -948,7 +936,6 @@ _delay_ms:
 	mov	a,r4
 	orl	a,r5
 	jz	00104$
-;	main.c:36: delay_us(1000);  // 1000 × ~1 мкс = ~1 мс
 	mov	dptr,#0x03e8
 	push	ar7
 	push	ar6
@@ -957,125 +944,115 @@ _delay_ms:
 	pop	ar7
 	sjmp	00101$
 00104$:
-;	main.c:38: }
+;	main.c:12: }
 	ret
 ;------------------------------------------------------------
 ;Allocation info for local variables in function 'Init_Peripherals'
 ;------------------------------------------------------------
-;	main.c:43: void Init_Peripherals(void) {
+;	main.c:14: void Init_Peripherals(void) {
 ;	-----------------------------------------
 ;	 function Init_Peripherals
 ;	-----------------------------------------
 _Init_Peripherals:
-;	main.c:44: OEB  = 0xFF;        // Порт B — выход (светодиоды)
+;	main.c:15: OEB = 0xFF; // Порт B на вывод (LED)
 	mov	_OEB,#0xff
-;	main.c:45: OED  = 0xFF;        // Порт D — выход (данные Centronics)
+;	main.c:16: OED = 0xFF; // Порт D на вывод (Centronics Data)
 	mov	_OED,#0xff
-;	main.c:46: OEC |= 0x01;        // PC0 — выход (STROBE)
+;	main.c:17: OEC |= 0x01; // PC0 на вывод (STROBE)
 	orl	_OEC,#0x01
-;	main.c:47: PC0 = 1;            // Изначально строб неактивен (высокий)
+;	main.c:18: PC0 = 1;    // Изначально STROBE в пассивном высоком состоянии
 ;	assignBit
 	setb	_PC0
-;	main.c:48: }
+;	main.c:19: }
 	ret
 ;------------------------------------------------------------
 ;Allocation info for local variables in function 'Centronics_SendByte'
 ;------------------------------------------------------------
-;byte_to_send  Allocated to registers r7 
+;byte_to_send  Allocated to registers 
 ;------------------------------------------------------------
-;	main.c:53: void Centronics_SendByte(unsigned char byte_to_send) {
+;	main.c:21: void Centronics_SendByte(unsigned char byte_to_send) {
 ;	-----------------------------------------
 ;	 function Centronics_SendByte
 ;	-----------------------------------------
 _Centronics_SendByte:
-	mov	r7, dpl
-;	main.c:54: IOD = byte_to_send;     // Устанавливаем данные на порт D
-	mov	_IOD,r7
-;	main.c:55: delay_us(2);            // Setup time
+	mov	_IOD,dpl
+;	main.c:23: delay_us(2); 
 	mov	dptr,#0x0002
-	push	ar7
 	lcall	_delay_us
-;	main.c:57: PC0 = 0;                // Строб: активный ноль
+;	main.c:24: PC0 = 0; // Строб вниз
 ;	assignBit
 	clr	_PC0
-;	main.c:58: delay_us(5);            // Пульс строба (больше 0.5 мкс)
+;	main.c:25: delay_us(5); 
 	mov	dptr,#0x0005
 	lcall	_delay_us
-;	main.c:60: PC0 = 1;                // Завершаем строб
+;	main.c:26: PC0 = 1; // Строб вверх
 ;	assignBit
 	setb	_PC0
-;	main.c:61: delay_us(2);            // Hold time
+;	main.c:27: delay_us(2); 
 	mov	dptr,#0x0002
-	lcall	_delay_us
-	pop	ar7
-;	main.c:64: IOB = byte_to_send;
-	mov	_IOB,r7
-;	main.c:65: }
-	ret
+;	main.c:28: }
+	ljmp	_delay_us
 ;------------------------------------------------------------
 ;Allocation info for local variables in function 'Update_Snake'
 ;------------------------------------------------------------
-;snake         Allocated with name '_Update_Snake_snake_10000_17'
-;direction     Allocated with name '_Update_Snake_direction_10000_17'
+;snake         Allocated with name '_Update_Snake_snake_10000_11'
+;direction     Allocated with name '_Update_Snake_direction_10000_11'
 ;------------------------------------------------------------
-;	main.c:70: void Update_Snake(void) {
+;	main.c:30: void Update_Snake(void) {
 ;	-----------------------------------------
 ;	 function Update_Snake
 ;	-----------------------------------------
 _Update_Snake:
-;	main.c:74: IOB = snake;  // Выводим на светодиоды
-	mov	_IOB,_Update_Snake_snake_10000_17
-;	main.c:76: if (direction == 0) {
-	mov	a,_Update_Snake_direction_10000_17
+;	main.c:38: IOB = snake;
+	mov	_IOB,_Update_Snake_snake_10000_11
+;	main.c:40: if (direction == 0) {
+	mov	a,_Update_Snake_direction_10000_11
 	jnz	00106$
-;	main.c:77: snake <<= 1;                    // Двигаем влево
-	mov	a,_Update_Snake_snake_10000_17
-	add	a,_Update_Snake_snake_10000_17
-	mov	_Update_Snake_snake_10000_17,a
-;	main.c:78: if (snake == 0xE0) {           // Достигли головой PB7 (1110_0000)
+;	main.c:42: snake <<= 1;
+	mov	a,_Update_Snake_snake_10000_11
+	add	a,_Update_Snake_snake_10000_11
+	mov	_Update_Snake_snake_10000_11,a
+;	main.c:46: if (snake == 0xE0) { 
 	mov	a,#0xe0
-	cjne	a,_Update_Snake_snake_10000_17,00108$
-;	main.c:79: direction = 1;
-	mov	_Update_Snake_direction_10000_17,#0x01
+	cjne	a,_Update_Snake_snake_10000_11,00108$
+;	main.c:47: direction = 1; // Меняем направление на обратное
+	mov	_Update_Snake_direction_10000_11,#0x01
 	ret
 00106$:
-;	main.c:82: snake >>= 1;                    // Двигаем вправо
-	mov	a,_Update_Snake_snake_10000_17
+;	main.c:51: snake >>= 1;
+	mov	a,_Update_Snake_snake_10000_11
 	clr	c
 	rrc	a
-	mov	_Update_Snake_snake_10000_17,a
-;	main.c:83: if (snake == 0x07) {           // Вернулись к началу
+	mov	_Update_Snake_snake_10000_11,a
+;	main.c:55: if (snake == 0x07) { 
 	mov	a,#0x07
-	cjne	a,_Update_Snake_snake_10000_17,00108$
-;	main.c:84: direction = 0;
-	mov	_Update_Snake_direction_10000_17,#0x00
+	cjne	a,_Update_Snake_snake_10000_11,00108$
+;	main.c:56: direction = 0; // Меняем направление на движение влево
+	mov	_Update_Snake_direction_10000_11,#0x00
 00108$:
-;	main.c:87: }
+;	main.c:59: }
 	ret
 ;------------------------------------------------------------
 ;Allocation info for local variables in function 'main'
 ;------------------------------------------------------------
-;	main.c:92: void main(void) {
+;	main.c:61: void main(void) {
 ;	-----------------------------------------
 ;	 function main
 ;	-----------------------------------------
 _main:
-;	main.c:93: Init_Peripherals();
+;	main.c:62: Init_Peripherals();
 	lcall	_Init_Peripherals
-;	main.c:95: while (1) {
+;	main.c:63: while(1) {
 00102$:
-;	main.c:96: Centronics_SendByte(0xAA);    // Отправляем байт
+;	main.c:64: Centronics_SendByte(0xAA);
 	mov	dpl, #0xaa
 	lcall	_Centronics_SendByte
-;	main.c:97: delay_ms(150);                // Пауза
-	mov	dptr,#0x0096
-	lcall	_delay_ms
-;	main.c:99: Update_Snake();               // Анимируем змейку
+;	main.c:65: Update_Snake();
 	lcall	_Update_Snake
-;	main.c:100: delay_ms(150);                // Пауза
+;	main.c:66: delay_ms(150); 
 	mov	dptr,#0x0096
 	lcall	_delay_ms
-;	main.c:102: }
+;	main.c:68: }
 	sjmp	00102$
 	.area CSEG    (CODE)
 	.area CONST   (CODE)

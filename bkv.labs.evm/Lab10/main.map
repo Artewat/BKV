@@ -74,15 +74,15 @@ C:   0000004F  s_GSINIT2
 C:   00000059  s_GSINIT3                       
 C:   0000007B  s_GSINIT4                       
 C:   00000080  l_DSEG                          
+C:   0000009A  l_CSEG                          
 C:   000000A5  s_GSINIT                        
 C:   000000A5  s_GSINIT5                       
 C:   000000AB  s_GSFINAL                       
-C:   000000AE  l_CSEG                          
 C:   000000AE  s_CSEG                          
 C:   000000F6  l_SSEG                          
 C:   00000100  l_IRAM                          
-C:   0000015C  s_CONST                         
-C:   0000015C  s_XINIT                         
+C:   00000148  s_CONST                         
+C:   00000148  s_XINIT                         
 
 ASxxxx Linker V03.00/V05.40 + sdld,  page 3.
 Hexadecimal  [32-Bits]
@@ -602,17 +602,17 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-CSEG                                000000AE    000000AE =         174. bytes (REL,CON,CODE)
+CSEG                                000000AE    0000009A =         154. bytes (REL,CON,CODE)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
 C:   000000AE  _delay_us                          main
-C:   000000CA  _delay_ms                          main
-C:   000000EC  _Init_Peripherals                  main
-C:   000000F8  _Centronics_SendByte               main
-C:   00000119  _Update_Snake                      main
-C:   0000013E  _main                              main
-C:   00000158  ___sdcc_external_startup           _startup
+C:   000000C4  _delay_ms                          main
+C:   000000E6  _Init_Peripherals                  main
+C:   000000F2  _Centronics_SendByte               main
+C:   0000010B  _Update_Snake                      main
+C:   00000130  _main                              main
+C:   00000144  ___sdcc_external_startup           _startup
 
 ASxxxx Linker V03.00/V05.40 + sdld,  page 21.
 

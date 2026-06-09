@@ -215,7 +215,7 @@ Symbol Table
     _CP_RL2                                                     =  0000C8 G
     _CY                                                         =  0000D7 G
     _C_T2                                                       =  0000C9 G
- 18 _Centronics_SendByte                                           00004A GR
+ 18 _Centronics_SendByte                                           000044 GR
     _DPH                                                        =  000083 G
     _DPH1                                                       =  000085 G
     _DPL                                                        =  000082 G
@@ -426,7 +426,7 @@ Symbol Table
     _IP                                                         =  0000B8 G
     _IT0                                                        =  000088 G
     _IT1                                                        =  00008A G
- 18 _Init_Peripherals                                              00003E GR
+ 18 _Init_Peripherals                                              000038 GR
     _MICROFRAME                                                 =  00E686 G
     _NAKIE                                                      =  00E65A G
     _NAKIRQ                                                     =  00E65B G
@@ -566,9 +566,9 @@ Symbol Table
     _USBFRAMEL                                                  =  00E685 G
     _USBIE                                                      =  00E65C G
     _USBIRQ                                                     =  00E65D G
- 18 _Update_Snake                                                  00006B GR
-  5 _Update_Snake_direction_10000_17                               000001 R
-  5 _Update_Snake_snake_10000_17                                   000000 R
+ 18 _Update_Snake                                                  00005D GR
+  5 _Update_Snake_direction_10000_11                               000001 R
+  5 _Update_Snake_snake_10000_11                                   000000 R
     _WAKEUPCS                                                   =  00E682 G
     _XAUTODAT1                                                  =  00E67B G
     _XAUTODAT2                                                  =  00E67C G
@@ -583,9 +583,9 @@ Symbol Table
     __sdcc_gsinit_startup                                          ****** GX
   F __sdcc_program_startup                                         000049 GR
   7 __start__stack                                                 000000 GR
- 18 _delay_ms                                                      00001C GR
+ 18 _delay_ms                                                      000016 GR
  18 _delay_us                                                      000000 GR
- 18 _main                                                          000090 GR
+ 18 _main                                                          000082 GR
     a                                                           =  0000E0 L
     a.0                                                         =  0000E0 L
     a.1                                                         =  0000E1 L
@@ -832,7 +832,7 @@ Area Table
   15 GSINIT5                                    size      0   flags   20
   16 GSINIT                                     size      6   flags   20
   17 GSFINAL                                    size      3   flags   20
-  18 CSEG                                       size     AA   flags   20
+  18 CSEG                                       size     96   flags   20
   19 CONST                                      size      0   flags   20
   1A XINIT                                      size      0   flags   20
   1B CABS                                       size      0   flags   28

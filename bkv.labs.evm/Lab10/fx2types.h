@@ -1,10 +1,9 @@
-// fx2types.h
 #ifndef FX2TYPES_H
 #define FX2TYPES_H
 
-typedef unsigned char  BYTE;
+typedef unsigned char BYTE;
 typedef unsigned short WORD;
-typedef unsigned long  DWORD;
+typedef unsigned long DWORD;
 
 #define bmBIT0 0x01
 #define bmBIT1 0x02
@@ -15,4 +14,4 @@ typedef unsigned long  DWORD;
 #define bmBIT6 0x40
 #define bmBIT7 0x80
 
-#endif
+#endif // FX2TYPES_H
